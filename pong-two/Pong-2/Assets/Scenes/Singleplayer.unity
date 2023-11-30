@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 260165187}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &214048002
@@ -281,6 +281,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &260165187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3944913817348981301, guid: 72ee9d7406810c14386966108a14c6bd, type: 3}
+  m_PrefabInstance: {fileID: 3944913816877611363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &293929700
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,6 +2158,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 990833541910307401, guid: 71dfc6680fdacb1429fc667efcac5e6d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: abf591168d84c054ca33eb98b1b04c42, type: 3}
     - target: {fileID: 6895608167017853445, guid: 71dfc6680fdacb1429fc667efcac5e6d, type: 3}
       propertyPath: m_RootOrder
       value: 3

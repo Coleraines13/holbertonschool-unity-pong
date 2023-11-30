@@ -3,7 +3,9 @@ guid: a235801507793f04ab33e12aa90d84b0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - victoryFanfare: {fileID: 8300000, guid: abf591168d84c054ca33eb98b1b04c42, type: 3}
+  - fireworksShow: {fileID: 8300000, guid: 8e36d2260bcd5224baf4fa9ca3226284, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
