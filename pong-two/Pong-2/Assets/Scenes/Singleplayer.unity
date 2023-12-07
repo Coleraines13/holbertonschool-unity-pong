@@ -830,8 +830,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 202.09576, y: 0}
-  m_SizeDelta: {x: 144.1915, y: 200}
+  m_AnchoredPosition: {x: 177.1222, y: -90.983154}
+  m_SizeDelta: {x: 168.6647, y: 182.8364}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &561484959
 MonoBehaviour:
@@ -874,7 +874,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 26.521461, y: 0}
+  m_Offset: {x: 1.3882523, y: -1.1117096}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -885,7 +885,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 93.04292, y: 200}
+  m_Size: {x: 77.52748, y: 113.892975}
   m_EdgeRadius: 0
 --- !u!114 &561484962
 MonoBehaviour:
@@ -1124,7 +1124,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.98238754, y: 0.117256165}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1135,7 +1135,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 40, y: 200}
+  m_Size: {x: 65.54334, y: 85.80403}
   m_EdgeRadius: 0
 --- !u!114 &899253995
 MonoBehaviour:
@@ -1704,7 +1704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 63497777be1c2a3468333a9fd29c6036, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb49bbb3e2b49674f98799696c31c86c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2162,6 +2162,14 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: abf591168d84c054ca33eb98b1b04c42, type: 3}
+    - target: {fileID: 990833541910307401, guid: 71dfc6680fdacb1429fc667efcac5e6d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 990833541910307401, guid: 71dfc6680fdacb1429fc667efcac5e6d, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -471038661078631646, guid: 9430e2ba7e2c97a459340a7a8d1ddf39, type: 2}
     - target: {fileID: 6895608167017853445, guid: 71dfc6680fdacb1429fc667efcac5e6d, type: 3}
       propertyPath: m_RootOrder
       value: 3
