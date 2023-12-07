@@ -806,8 +806,9 @@ GameObject:
   - component: {fileID: 561484961}
   - component: {fileID: 561484960}
   - component: {fileID: 561484959}
+  - component: {fileID: 561484964}
   m_Layer: 5
-  m_Name: Player One
+  m_Name: PlayerOne
   m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -925,6 +926,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561484957}
   m_CullTransparentMesh: 1
+--- !u!114 &561484964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561484957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307c58973e4c3b447baec270b145c29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.5
+  shakeIntensity: 10
 --- !u!1 &679236410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,8 +1070,9 @@ GameObject:
   - component: {fileID: 899253994}
   - component: {fileID: 899253993}
   - component: {fileID: 899253992}
+  - component: {fileID: 899253997}
   m_Layer: 5
-  m_Name: Player Two
+  m_Name: PlayerTwo
   m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1175,6 +1191,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899253990}
   m_CullTransparentMesh: 1
+--- !u!114 &899253997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899253990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307c58973e4c3b447baec270b145c29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.5
+  shakeIntensity: 10
 --- !u!1 &1207279360
 GameObject:
   m_ObjectHideFlags: 0

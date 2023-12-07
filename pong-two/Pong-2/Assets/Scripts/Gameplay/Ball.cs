@@ -1,13 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
-namespace ZPong
+namespace ZPong{
+
+public class Ball : MonoBehaviour
 {
 
-    public class Ball : MonoBehaviour
-    {
+    public Gradient hueShift;
+    public Image sprite;
+            public float scaleSpeed = 3;
+
+    public PaddleShake playerOnePaddle;
+    public PaddleShake playerTwoPaddle;
+
         public float speed = 5f;
+        private float startSpeed;
+        public float maxSpeed = 15f;
+
+        public float accelerationAmount = .33f;
 
         private float screenTop = 527;
         private float screenBottom = -527;
@@ -21,15 +33,24 @@ namespace ZPong
 
         private AudioSource bounceSFX;
 
+        private void Awake(){
+            
+            startSpeed = speed;
+        }
 
         private void Start()
         {
             rectTransform = GetComponent<RectTransform>();
+            sprite = GetComponent<Image>();
 
-            if (PlayerPrefs.HasKey("BallSpeed"))
-            {
-                speed = PlayerPrefs.GetFloat("BallSpeed");
-            }
+
+            playerOnePaddle = GameObject.Find("PlayerOne").GetComponent<PaddleShake>();
+            playerTwoPaddle = GameObject.Find("PlayerTwo").GetComponent<PaddleShake>();
+
+            // if (PlayerPrefs.HasKey("BallSpeed"))
+            // {
+            //     speed = PlayerPrefs.GetFloat("BallSpeed");
+            // }
 
             if (PlayerPrefs.HasKey("BallSize"))
             {
@@ -76,6 +97,12 @@ namespace ZPong
             if (ballActive)
             {
 
+                speed += accelerationAmount * Time.deltaTime;
+                if(speed > maxSpeed){
+                    speed = maxSpeed;
+                }
+
+                sprite.color = hueShift.Evaluate((speed-startSpeed) / (maxSpeed-startSpeed));
 
                 Vector2 newPosition = rectTransform.anchoredPosition + (direction * speed * Time.deltaTime);
 
@@ -94,6 +121,18 @@ namespace ZPong
         {
             if (collision.gameObject.CompareTag("Paddle"))
             {
+                 // this determines which paddle was hit
+                if (collision.gameObject.name == "PlayerOne")
+                {
+                    // this starts shaking the PlayerOne paddle
+                    playerOnePaddle.StartShake();
+                }
+                else if (collision.gameObject.name == "PlayerTwo")
+                {
+                    // this starts shaking the PlayerTwo paddle
+                    playerTwoPaddle.StartShake();
+                }
+
                 Paddle paddle = collision.gameObject.GetComponent<Paddle>();
 
                 float y = BallHitPaddleWhere(GetPosition(), paddle.AnchorPos(),
@@ -126,8 +165,14 @@ namespace ZPong
 
         public void SetBallActive(bool value)
         {
-            ballActive = value;
+            speed = startSpeed;
             direction = defaultDirection;
+            if(value){
+                StartCoroutine(ScaleOnPlay());
+            }
+            else{
+                ballActive = false;
+            }
         }
 
         public Vector2 GetPosition()
@@ -159,5 +204,14 @@ namespace ZPong
             ballActive = false;
         }
 
-    }
+        
+        IEnumerator ScaleOnPlay(){
+            for(float i = 0; i < scaleSpeed; i += Time.deltaTime){
+                rectTransform.localScale = new Vector3(i,i,1);
+                yield return new WaitForEndOfFrame();
+            }
+            rectTransform.localScale = new Vector3(1,1,1);
+            ballActive = true;
+        }
+}
 }
